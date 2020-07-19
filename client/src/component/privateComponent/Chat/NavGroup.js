@@ -41,7 +41,7 @@ const NavGroup = () => {
         <li data-toggle="tooltip" title="User menu" data-placement="right">
             <a href="./login.html" data-toggle="dropdown">
             <figure className="avatar">
-                <img src="./dist/media/img/agente.jpg" className="rounded-circle" alt="image" />
+            <img src={require("../../dist/media/img/agente.jpg")} className="rounded-circle" alt="image" />
             </figure>
             </a>
             <div className="dropdown-menu">

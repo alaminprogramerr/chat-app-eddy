@@ -27,7 +27,7 @@ const ProfileSidebar = () => {
             <h2 className="titulo-perfil">Perfil</h2>
             <br />
             <figure className="avatar avatar-xl mb-4">
-                <img src="./dist/media/img/usuario-cli.jpg" className="rounded-circle" alt="image" />
+            <img src={require("../../dist/media/img/usuario-cli.jpg")} className="rounded-circle" alt="image" />
             </figure>
             <h5 className="mb-1">Mirabelle Tow</h5>
             <small className="text-muted font-italic">Ultimo chat: 22/04/2020</small>

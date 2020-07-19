@@ -33,7 +33,7 @@ const ChatSidebar = () => {
             <li className="list-group-item open-chat">
                 <div>
                 <figure className="avatar">
-                    <img src="./dist/media/img/whatsaap.jpg" className="rounded-circle" alt="image" />
+                    <img src={require('../../dist/media/img/whatsaap.jpg')} className="rounded-circle" alt="image" />
                 </figure>
                 </div>
                 <div className="users-list-body">

@@ -6,7 +6,7 @@ const MainNav = () => {
             <div className="main-nav">
                 <div className="box-logo">
                 <div className="logo">
-                    <img src="./dist/media/img/logo_ver3.png" alt="" />
+                <img src={require("../../dist/media/img/logo_ver3.png")} alt="" />
                 </div>
                 </div>
                 <div className="box-right">

@@ -7,7 +7,7 @@ const outMassage = () => {
             <div className="message-item outgoing-massage">
                 <div className="message-avatar">
                 <figure className="avatar">
-                    <img src="./dist/media/img/agente.jpg" className="rounded-circle" alt="image" />
+                <img src={require("../../dist/media/img/agente.jpg")} className="rounded-circle" alt="image" />
                 </figure>
                 <div>
                     <h5>Byrom Guittet</h5>

@@ -1,5 +1,4 @@
 import React from 'react'
-import './reDesign.css'
 import MainNav from './MainNav'
 import NavGroup from './NavGroup'
 import ChatHeader from './ChatHeader'
@@ -17,6 +16,8 @@ import GroupCreateModal from './GroupCreateModal'
 import ProfileSettingModal from './ProfileSettingModal'
 import EditProfileModal from './EditProfileModal'
 import TransfarModal from './TransfarModal'
+import './reDesign.css'
+
 const Index = () => {
     return (
         <div>

@@ -6,7 +6,7 @@ const outGoingImage = () => {
             <div className="message-item">
                 <div className="message-avatar">
                 <figure className="avatar">
-                    <img src="./dist/media/img/agente.jpg" className="rounded-circle" alt="image" />
+                <img src={require("../../dist/media/img/agente.jpg")} className="rounded-circle" alt="image" />
                 </figure>
                 <div>
                     <h5>Byrom Guittet</h5>

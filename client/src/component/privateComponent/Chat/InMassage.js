@@ -6,7 +6,7 @@ const InMassage = () => {
             <div className="message-item incomming-Massage">
                 <div className="message-avatar">
                 <figure className="avatar">
-                    <img src="./dist/media/img/usuario-cli.jpg" className="rounded-circle" alt="image" />
+                <img src={require("../../dist/media/img/usuario-cli.jpg")} className="rounded-circle" alt="image" />
                 </figure>
                 <div>
                     <h5>Mirabelle Tow</h5>

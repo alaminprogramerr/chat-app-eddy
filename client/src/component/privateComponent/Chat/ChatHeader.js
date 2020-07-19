@@ -7,7 +7,7 @@ function ChatHeader() {
         <div className="chat-header-user">
             <figure className="avatar">
             <a href="#" data-navigation-target="contact-information">
-                <img src="./dist/media/img/agente.jpg" className="rounded-circle" alt="image" />
+                <img src={require("../../dist/media/img/agente.jpg")} className="rounded-circle" alt="image" />
             </a>
             </figure>
             <div>
