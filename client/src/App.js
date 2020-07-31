@@ -8,21 +8,25 @@ import LockScreen from './component/publicComponent/LockScreen'
 import PhoneVerification from './component/publicComponent/PhoneVerification'
 import PublicRoute from './component/util/PublicRoute'
 import PrivateRoute from './component/util/PrivateRoute'
+
+
+import {RecoilRoot} from 'recoil'
 const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-
+        <RecoilRoot>
+          <PublicRoute path='/login' component={Login}/>
+          <PublicRoute path='/register' component={Register}/>
+          <PublicRoute path='/reset-password' component={ResetPassword}/>
+          <PublicRoute path='/lock' component={LockScreen}/>
+          <PublicRoute path='/phone-verification' component={PhoneVerification}/>
+          
+          {/* Private route */}
+          <PrivateRoute exect path='/chat' component={ChatIndex}/>
+          <Redirect from ='/' to='/chat'/>
+        </RecoilRoot>
         {/* Public route */}
-        <PublicRoute path='/login' component={Login}/>
-        <PublicRoute path='/register' component={Register}/>
-        <PublicRoute path='/reset-password' component={ResetPassword}/>
-        <PublicRoute path='/lock' component={LockScreen}/>
-        <PublicRoute path='/phone-verification' component={PhoneVerification}/>
-        
-        {/* Private route */}
-        <PrivateRoute exect path='/chat' component={ChatIndex}/>
-        <Redirect from ='/' to='/chat'/>
       </Switch>
     </BrowserRouter>
   )

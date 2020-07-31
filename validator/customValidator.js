@@ -1,10 +1,13 @@
 const validator=require('validator')
 const registerValidator= (req)=>{
-    const {name,email,password,confirmPassword}=req.body
+    const {firstName,lastName,email,password}=req.body
     let error={}
     console.log(req.body)
-    if(!name){
-        error.name="Name required !!"
+    if(!firstName){
+        error.firstName="First name required !!"
+    }
+    if(!lastName){
+        error.lastName="Last name required !!"
     }
     if(!email){
         error.email="Email required !!"
@@ -14,12 +17,6 @@ const registerValidator= (req)=>{
     if(!password){
         error.password="Password required !!"
     }
-    if(!confirmPassword){
-        error.confirmPassword="Confirm password  required !!"
-    }else if(password!==confirmPassword){
-        error.confirmPassword="Confirm  password does not match with password !!"
-    }
-    
     return{
         isValid:Object.keys(error).length===0,
         error:error

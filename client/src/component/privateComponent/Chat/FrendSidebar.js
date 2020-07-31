@@ -10,7 +10,7 @@ const FrendSidebar = () => {
             <ul className="list-inline">
             <li className="list-inline-item" data-toggle="tooltip" title="Add friends">
                 <a className="btn btn-outline-light" href="#" data-toggle="modal" data-target="#addFriends">
-                <i data-feather="user-plus" />
+                    <i data-feather="user-plus" />
                 </a>
             </li>
             <li className="list-inline-item d-xl-none d-inline">

@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import './style.css'
+import Axios from 'axios'
 const Login = () => {
+    
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState({})
+    const submitHandler=(event)=>{
+        event.preventDefault()
+        let obj = {email,password}
+        Axios.post('/login',obj)
+        .then(res=>{
+            localStorage.setItem('eddy_app',res.data.token)
+            window.location.href='/login'
+        })
+        .catch(err=>{
+            setError(err.response.data)
+        })
+    }
     return (
         <div>
             <div className="form-membership">
@@ -11,22 +29,26 @@ const Login = () => {
                     </div>
                     {/* ./ logo */}
                     <h5>Sign in</h5>
+                    {error.massage?
+                        <h5 className="text-warning">{error.massage}</h5>:''
+                    }
                     {/* form */}
                     <form>
+                        
                         <div className="form-group">
-                            <input type="text" className="form-control" placeholder="Username or email" required autofocus />
+                            <input onChange={(e)=>{setEmail(e.target.value)}} type="email"className={error.email?"form-control is-invalid ":"form-control"} placeholder={error.email?error.email:"Email"}  />
                         </div>
                         <div className="form-group">
-                            <input type="password" className="form-control" placeholder="Password" required />
+                            <input onChange={(e)=>{setPassword(e.target.value)}} type="password" className={error.password?"form-control is-invalid ":"form-control"}placeholder={error.password?error.password:"Password"} />
                         </div>
                         <div className="form-group d-flex justify-content-between">
                             <div className="custom-control custom-checkbox">
                                 <input type="checkbox" className="custom-control-input" defaultChecked id="customCheck1" />
                                 <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                             </div>
-                            <a href="./reset-password.html">Reset password</a>
+                            <Link to="/reset-password">Reset password</Link>
                         </div>
-                        <button className="btn btn-primary btn-block">Sign in</button>
+                        <button onClick={(event)=>submitHandler(event)} className="btn btn-primary btn-block">Sign in</button>
                         <hr />
                         <p className="text-muted">Login with your social media account.</p>
                         <ul className="list-inline">
@@ -68,7 +90,7 @@ const Login = () => {
                         </ul>
                         <hr />
                         <p className="text-muted">Don't have an account?</p>
-                        <a href="./register.html" className="btn btn-outline-light btn-sm">Register now!</a>
+                        <Link to="/register" className="btn btn-outline-light btn-sm">Register now!</Link>
                     </form>
                     {/* ./ form */}
                 </div>

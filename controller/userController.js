@@ -22,9 +22,11 @@ const register=(req,res)=>{
                 return res.status(500).json({massage:"Server error !!!"})
             }
             new userModel({
-                name:req.body.name,
+                firstName:req.body.firstName,
+                lastName:req.body.lastName,
                 email:req.body.email,
                 password:hash,
+                activeStatus:null
             }).save()
             .then(user=>{
                 console.log(user)
@@ -61,8 +63,8 @@ const login=(req,res)=>{
             let token=jwt.sign({
                 name:user.name,
                 email:user.email,
-                phoneNumber:user.phoneNumber,
-                userType:user.userType,
+                firstName:user.firstName,
+                lastName:user.lastName
             },'st_app',{expiresIn:'4h'})
             
             return res.status(200).json({token:token})

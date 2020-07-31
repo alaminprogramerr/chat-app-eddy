@@ -6,8 +6,7 @@ const PublicRoute = ({component:Component,...rest}) => {
             {...rest}
             render={
                 props=>{
-                    if(false){
-                        // if(window.localStorage.getItem('eddy_app')){
+                        if(window.localStorage.getItem('eddy_app')){
                         return (
                             <Redirect
                                 to={

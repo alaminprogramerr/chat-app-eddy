@@ -7,8 +7,7 @@ const PrivageRoute=({component:Component,...rest})=> {
             {...rest}
             render={
                 props=>{
-                    if(true){
-                        // if(localStorage.getItem('eddy_app')){
+                        if(localStorage.getItem('eddy_app')){
                         return <Component {...props}/>
                     }else{
                         return(

@@ -46,7 +46,7 @@
 }
 .messages .message-item {
     max-width: 75%;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
 }
 
 .message-content {
@@ -65,4 +65,32 @@
     margin-left: auto;
     background-color: #0dc5ad;
     color: #fff;
+}
+.box-logo {
+    width: 30%;
+    float: left;
+    padding: 7px 30px;
+}
+.main-nav {
+    width: 100%;
+    background: #0dc5ad;
+}
+.box-right {
+    width: 70%;
+    float: right;
+    padding: 12px 30px;
+}
+.logo img {
+    width: 150px;
+}
+.sidebar-body{
+    min-height: 200px;
+}
+
+.list-group-flush li:focus{
+    background-color: blue;
+}
+
+.out_file {
+    margin-left: auto !important;
 }
